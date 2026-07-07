@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
             strategy="afterInteractive"
           />
 
-          <Script strategy="afterInteractive">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
 
