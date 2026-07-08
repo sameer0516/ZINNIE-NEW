@@ -5,7 +5,20 @@
 * {
   box-sizing: border-box;
 }
+.admin-editor-box {
+  min-height: 400px;
+}
 
+.mdxeditor-root [contenteditable="true"] {
+  min-height: 350px;
+  resize: vertical;
+  overflow: auto;
+  padding: 12px;
+}
+
+.mdx-highlight-btn:hover {
+  background: #f0f0f0 !important;
+}
 .admin-page-wrapper {
   background: linear-gradient(135deg, #f5f0e8 0%, #faf8f5 100%);
   min-height: 100vh;
@@ -97,6 +110,7 @@
   border-bottom: 1px solid #e8e0d5 !important;
   padding: 8px !important;
   flex-wrap: wrap !important;
+  
 }
 
 .admin-submit-btn {

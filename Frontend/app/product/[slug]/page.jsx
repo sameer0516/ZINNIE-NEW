@@ -1,7 +1,10 @@
 // app/product/[slug]/page.jsx
 // ✅ Server Component — SEO content yahan render hoga taaki page source mein dike
+// ✅ 2 dropdown (About + FAQ) — native <details>/<summary>, CSS alag file mein
+// ✅ Har product apna hi alag data dikhata hai (productData.js se, slug ke hisaab se)
 
 import ProductDetailClient from "./ProductDetailClient";
+import "./productFaqAccordion.css";
 import {
   productSeoData,
   buildProductSchema,
@@ -84,11 +87,12 @@ export async function generateMetadata({ params }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// SeoContentSection — Server Component
-// Pure HTML render karta hai — Google page source mein seedha
-// dekh sakta hai bina JavaScript execute kiye
+// SeoAboutContent — "About {Product}" dropdown ke andar jaayega
+// ✅ Ab yeh paragraphs/list/closingParagraphs sab render karta hai
+// ✅ <strong>, <u>, <a> jaise inline HTML tags bhi ab sahi render honge
+//    (dangerouslySetInnerHTML use kiya gaya hai — data static/apna hai, safe hai)
 // ─────────────────────────────────────────────────────────────
-function SeoContentSection({ sections }) {
+function SeoAboutContent({ sections }) {
   if (!sections || sections.length === 0) return null;
 
   return (
@@ -100,15 +104,56 @@ function SeoContentSection({ sections }) {
             <HeadingTag className="seo-section-heading">{section.heading}</HeadingTag>
 
             {section.paragraphs?.map((p, pIdx) => (
-              <p key={pIdx} className="seo-section-content">{p}</p>
+              <p
+                key={pIdx}
+                className="seo-section-content"
+                dangerouslySetInnerHTML={{ __html: p }}
+              />
+            ))}
+
+            {section.listIntro && (
+              <p
+                className="seo-section-content seo-list-intro"
+                dangerouslySetInnerHTML={{ __html: section.listIntro }}
+              />
+            )}
+
+            {section.list?.length > 0 && (
+              <ul className="seo-section-list">
+                {section.list.map((item, lIdx) => (
+                  <li
+                    key={lIdx}
+                    className="seo-section-list-item"
+                    dangerouslySetInnerHTML={{ __html: item }}
+                  />
+                ))}
+              </ul>
+            )}
+
+            {section.closingParagraphs?.map((p, cIdx) => (
+              <p
+                key={cIdx}
+                className="seo-section-content"
+                dangerouslySetInnerHTML={{ __html: p }}
+              />
             ))}
 
             {section.subSections?.map((sub, sIdx) => {
               const SubTag = sub.tag || "h3";
               return (
                 <div key={sIdx} className="seo-subsection">
-                  <SubTag className="seo-subsection-heading">{sub.heading}</SubTag>
-                  <p className="seo-section-content">{sub.text}</p>
+                  {sub.heading && (
+                    <SubTag
+                      className="seo-subsection-heading"
+                      dangerouslySetInnerHTML={{ __html: sub.heading }}
+                    />
+                  )}
+                  {sub.text && (
+                    <p
+                      className="seo-section-content"
+                      dangerouslySetInnerHTML={{ __html: sub.text }}
+                    />
+                  )}
                 </div>
               );
             })}
@@ -120,24 +165,26 @@ function SeoContentSection({ sections }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// FaqSection — Server Component
-// Static HTML — Google FAQ rich results ke liye
+// FaqAnswerContent — "FAQ" dropdown ke andar jaayega
 // ─────────────────────────────────────────────────────────────
-function FaqSection({ faqList, productTitle }) {
+function FaqAnswerContent({ faqList }) {
   if (!faqList || faqList.length === 0) return null;
 
   return (
-    <section className="product-faq-section" aria-label="Frequently Asked Questions">
-      <h2 className="faq-heading">Frequently Asked Questions — {productTitle}</h2>
-      <div className="faq-static-list">
-        {faqList.map((item, idx) => (
-          <div key={idx} className="faq-static-item">
-            <h3 className="faq-static-question">{item.question}</h3>
-            <p className="faq-static-answer">{item.answer}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="faq-static-list">
+      {faqList.map((item, idx) => (
+        <div key={idx} className="faq-static-item">
+          <h3
+            className="faq-static-question"
+            dangerouslySetInnerHTML={{ __html: item.question }}
+          />
+          <p
+            className="faq-static-answer"
+            dangerouslySetInnerHTML={{ __html: item.answer }}
+          />
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -148,6 +195,8 @@ export default async function Page({ params }) {
   const { slug } = await params;
   const products = await getAllProducts();
   const initialProduct = products.find((p) => p.slug === slug) || null;
+
+  // 👇 Yahi line har product ke liye alag data uthati hai (5 products = 5 alag results)
   const seo = productSeoData[slug] || null;
 
   if (!initialProduct) {
@@ -175,6 +224,7 @@ export default async function Page({ params }) {
   const productSchema = buildProductSchema(slug, initialProduct);
   const faqSchema = buildFaqSchema(slug);
   const breadcrumbSchema = buildBreadcrumbSchema(slug, initialProduct.title || seo?.name);
+  const productTitle = initialProduct.title || seo?.name || "";
 
   return (
     <>
@@ -214,11 +264,36 @@ export default async function Page({ params }) {
             className="product-seo-bottom"
             style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 0px 0px" }}
           >
-            <SeoContentSection sections={seo?.seoSections} />
-            <FaqSection
-              faqList={seo?.faq}
-              productTitle={initialProduct.title || seo?.name || ""}
-            />
+            {/* ── 2 dropdown — is product (slug) ka apna data ── */}
+            <div className="accordion-root-container">
+              <div className="accordion-root">
+
+                {seo?.seoSections?.length > 0 && (
+                  <details className="acc-panel">
+                    <summary className="acc-panel-header">
+                      <span className="acc-panel-title">{productTitle}</span>
+                      <span className="acc-panel-chevron">▾</span>
+                    </summary>
+                    <div className="acc-panel-inner">
+                      <SeoAboutContent sections={seo?.seoSections} />
+                    </div>
+                  </details>
+                )}
+
+                {seo?.faq?.length > 0 && (
+                  <details className="acc-panel">
+                    <summary className="acc-panel-header">
+                      <span className="acc-panel-title">Frequently Asked Questions</span>
+                      <span className="acc-panel-chevron">▾</span>
+                    </summary>
+                    <div className="acc-panel-inner">
+                      <FaqAnswerContent faqList={seo?.faq} />
+                    </div>
+                  </details>
+                )}
+
+              </div>
+            </div>
           </div>
         </div>
       </div>

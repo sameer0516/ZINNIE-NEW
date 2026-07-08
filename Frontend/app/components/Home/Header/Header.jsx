@@ -884,7 +884,7 @@ export default function Header() {
                         onClick={() => toggle("content")}
                         aria-expanded={openSection === "content"}
                     >
-                        <span className="panel-title">Zinnie Zeera – About Our Soft Drinks</span>
+                        <span className="panel-title">Zinnie – About Our Soft Drinks</span>
                         <span className="panel-chevron">▾</span>
                     </button>
 
