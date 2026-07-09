@@ -141,6 +141,48 @@
   margin: 16px 0;
 }
 
+/* ── TABLES: GFM tables ke liye proper look ── */
+.blog-detail-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+.blog-detail-content th,
+.blog-detail-content td {
+  border: 1px solid #e5e0d8;
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-detail-content th {
+  background: #faf8f5;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.blog-detail-content tr:nth-child(even) td {
+  background: #fcfbf9;
+}
+
+/* ── BLOCKQUOTE: admin editor ke quote-style se match karta hua ── */
+.blog-detail-content blockquote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #4a3f35;
+  border-left: 3px solid #c9a96e;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background: #faf8f5;
+  border-radius: 0 6px 6px 0;
+}
+
+.blog-detail-content blockquote p {
+  margin: 0;
+}
+
 .blog-detail-loading {
   text-align: center;
   padding: 80px 0;
