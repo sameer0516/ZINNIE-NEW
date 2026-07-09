@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import "../blog.css";
 
@@ -50,6 +51,7 @@ export default function BlogClient({ slug }) {
       )}
       <div className="blog-detail-content">
         <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
           components={{
             img: ({ node, ...props }) => {
