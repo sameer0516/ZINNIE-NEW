@@ -2,24 +2,21 @@ export const productSeoData = {
 
     // ─────────────────────────────────────────────
     "nimbu-zeera-drink": {
-    name: "Nimbu Zeera",
-    image: "/images/1.png",
-    metaTitle: "Nimbu Zeera Drink – Refreshing Jeera Juice & Lemon Flavoured Cold Drink | Zinnie Zeera",
+    name: "nimbu-zeera-drink",
+    image: "/distributor-4.png",
+    metaTitle: "Buy Nimbu Zeera Drink Online | Jeera & Lemon Cold Drink",
     metaDescription:
-        "Buy Nimbu Zeera Drink online — a refreshing blend of tangy lemon and aromatic jeera. India's favourite jeera cold drink in a convenient ready-to-drink bottle.",
+        "Enjoy the refreshing Nimbu Zeera drink — a perfect blend of jeera and lemon water. Order your bottle of this cooling jeera drink online today!",
     canonicalUrl: "https://zinniezeera.com/product/nimbu-zeera-drink",
     ratingValue: "4.9",
     reviewCount: "9924",
     sku: "NZD-001",
     category: "Soft Drinks",
     price: "10",
-
-    h1: "Nimbu Jeera Drink – Refreshing, Tangy & Full of Flavor",
-
     seoSections: [
         {
             tag: "h2",
-            heading: "Nimbu Jeera Drink – Refreshing, Tangy & Full of Flavor",
+            heading: "Nimbu Zeera Drink – A Refreshing Jeera & Lemon Cold Drink",
             paragraphs: [
                 "If you're looking for a refreshing alternative to regular soft drinks, a <strong>jeera drink</strong> is the perfect choice. Zinnie's <u>nimbu</u> jeera drink blends the bold, earthy taste of cumin (jeera) with the tangy freshness of lemon, creating a beverage that feels both traditional and excitingly different.",
                 "Unlike typical sugary beverages, this <strong>jeera cold drink</strong> offers a well-balanced flavor profile—tangy, mildly spicy, and lightly fizzy. The combination is designed to refresh instantly while also delivering a deeper, more satisfying taste that lingers pleasantly after every sip. It's not just about quenching your thirst; it's about enjoying a drink that feels flavorful and complete.",
@@ -399,9 +396,9 @@ export const productSeoData = {
     // ────
     "zeera-masala-soda": {
         name: "Zeera Masala Soda",
-        image: "/images/2.png",
-        metaTitle: "Zeera Masala Soda – Bold Jeera Soda Drink with Desi Masala Flavour | Zinnie Zeera",
-        metaDescription: "Experience Zeera Masala Soda — a bold blend of cumin, lemon, and Indian spices. The best jeera masala soda inspired by street-style nimbu soda. Buy online.",
+        image: "/distributor-1.png",
+        metaTitle: "Buy Zeera Masala Soda Online | Refreshing Jeera Soda Drink",
+        metaDescription: "Enjoy Zinnie’s Zeera Masala Soda — a zesty jeera soft drink with nimbu flavor. Order your refreshing jeera masala soda bottle online today!",
         canonicalUrl: "https://zinniezeera.com/product/zeera-masala-soda/",
         ratingValue: "4.9",
         reviewCount: "1040",
@@ -409,12 +406,9 @@ export const productSeoData = {
         category: "Soft Drinks",
         price: "10",
 
-        h1: "Jeera Masala Soda – Refreshing Jeera Drink Bottle with Bold Indian Flavor",
-
         seoSections: [
             {
                 tag: "h2",
-                heading: "Jeera Masala Soda – Refreshing Jeera Drink Bottle with Bold Indian Flavor",
                 paragraphs: [
                     "If you're searching for a beverage that goes beyond the ordinary, Zinnie's <strong>jeera masala soda</strong> is a refreshing and flavorful choice. Carefully crafted for modern consumers who appreciate traditional Indian tastes, this drink blends the earthy richness of roasted cumin (jeera) with tangy citrus notes and a crisp, fizzy finish that instantly refreshes your senses.",
                     "What makes this <strong>jeera drink bottle</strong> truly special is its ability to combine bold flavor with a light and smooth drinking experience. Unlike regular sugary soft drinks that can feel heavy or overly sweet, this beverage delivers a perfectly balanced taste—spicy, tangy, and mildly sweet—all in one sip. It is designed to refresh without overwhelming your palate, making it an ideal option for daily enjoyment.",
@@ -576,9 +570,9 @@ export const productSeoData = {
     // ─────────────────────────────────────────────
     "mango-drink": {
         name: "Mango Drink",
-        image: "/images/4.png",
-        metaTitle: "Mango Drink – Refreshing Fruit Drink with Rich Tropical Mango Flavor | Zinnie Zeera",
-        metaDescription: "Buy Mango Drink online from Zinnie Zeera — a smooth, refreshing fruit drink with rich tropical mango flavor. Perfect for all ages, all seasons.",
+        image: "/distributor-2.png",
+        metaTitle: "Buy Refreshing Mango Drink Online | Zinnie Fruit Drinks",
+        metaDescription: "Quench your thirst with Zinnie’s refreshing mango drink — a delicious fruit drink perfect for every occasion. Order your favorite mango beverage online today!",
         canonicalUrl: "https://zinniezeera.com/product/mango-drink/",
         ratingValue: "4.9",
         reviewCount: "2352",
@@ -586,12 +580,9 @@ export const productSeoData = {
         category: "Fruit Drinks",
         price: "30",
 
-        h1: "What Makes Mango Drink Unique Among Fruit Drinks",
-
         seoSections: [
             {
                 tag: "h2",
-                heading: "What Makes Mango Drink Unique Among Fruit Drinks",
                 paragraphs: [
                     "<strong>Mango drink</strong> stands out among fruit drinks because of its rich, tropical flavor and naturally smooth consistency. Unlike lighter beverages that may feel watery or mild, a mango drink delivers a fuller, more satisfying taste experience that appeals to a wide range of consumers. The natural sweetness of mango, combined with a refreshing liquid base, creates a beverage that feels both indulgent and cooling at the same time.",
                     "One of the key reasons mango drinks continue to remain popular is their ability to offer a consistent and reliable flavor throughout the year. Fresh mangoes are seasonal, but packaged mango drinks make it possible to enjoy that familiar taste anytime, without depending on availability. This consistency builds trust and makes mango drinks a convenient everyday choice for people who enjoy fruity flavors.",
@@ -796,9 +787,9 @@ export const productSeoData = {
     // ─────────────────────────────────────────────
     "ginger-lemon-drink": {
     name: "Ginger Lemon Drink",
-    image: "/images/5.png",
-    metaTitle: "Ginger Lemon Drink – Refreshing, Zesty and Naturally Flavored Beverage | Zinnie Zeera",
-    metaDescription: "Buy Ginger Lemon Drink online from Zinnie Zeera — bold spice of ginger meets tangy lemon freshness. Light, refreshing, and perfect for everyday hydration.",
+    image: "/distributor-3.png",
+    metaTitle: "Buy Ginger Lemon Drink Online | Refreshing Zinnie Beverage",
+    metaDescription: "Enjoy Zinnie’s refreshing ginger lemon drink — a perfect blend of zesty ginger and tangy lemon. Order your favorite drink online today!",
     canonicalUrl: "https://zinniezeera.com/product/ginger-lemon-drink",
     ratingValue: "4.9",
     reviewCount: "2125",
@@ -806,12 +797,9 @@ export const productSeoData = {
     category: "Fruit & Herbal Drinks",
     price: "10",
 
-    h1: "Ginger Lemon Drink – A Refreshing Blend of Spice & Citrus",
-
     seoSections: [
         {
             tag: "h2",
-            heading: "Ginger Lemon Drink – A Refreshing Blend of Spice & Citrus",
             paragraphs: [
                 "In a world full of overly sweet and artificial beverages, finding a drink that feels refreshing, balanced, and truly satisfying can be a challenge. Zinnie's <strong>ginger lemon drink</strong> brings you the perfect solution by combining the bold warmth of ginger with the tangy freshness of lemon. This unique fusion creates a vibrant flavor profile that excites your taste buds while delivering a clean and refreshing finish.",
                 "Every sip offers a delightful contrast—spicy notes from ginger paired with the bright citrus kick of lemon—resulting in a drink that feels both energizing and soothing at the same time. It is thoughtfully crafted to provide a refreshing experience without the heaviness or excessive sweetness often found in regular soft drinks.",
@@ -1097,9 +1085,9 @@ export const productSeoData = {
     // ─────────────────────────────────────────────
   "chilli-guava-drink": {
     name: "Chilli Guava Drink",
-    image: "/images/3.png",
-    metaTitle: "Chilli Guava Drink – Bold Sweet and Spicy Fruit Beverage | Zinnie Zeera",
-    metaDescription: "Buy Chilli Guava Drink online from Zinnie Zeera — sweet guava meets bold chilli in every sip. A unique, refreshing fruit drink with a spicy twist.",
+    image: "/distributor-5.png",
+    metaTitle: "Buy Chilli Guava Drink Online | Zinnie Chilli Guava Juice",
+    metaDescription: "Taste the spicy and refreshing Chilli Guava Drink by Zinnie. Order your favorite chilli guava juice online today and enjoy a unique, flavorful beverage!",
     canonicalUrl: "https://zinniezeera.com/product/chilli-guava-drink",
     ratingValue: "4.9",
     reviewCount: "3220",
@@ -1107,12 +1095,9 @@ export const productSeoData = {
     category: "Fruit Drinks",
     price: "10",
 
-    h1: "Chilli Guava Drink – Sweet, Spicy & Refreshingly Unique",
-
     seoSections: [
         {
             tag: "h2",
-            heading: "Chilli Guava Drink – Sweet, Spicy & Refreshingly Unique",
             paragraphs: [
                 "If you're looking for a drink that goes beyond ordinary flavors, the <strong>chilli guava drink</strong> is a perfect choice. This unique beverage blends the natural sweetness of guava with a mild spicy kick, creating a bold and refreshing taste experience that instantly stands out.",
                 "Unlike regular soft drinks that focus mainly on sweetness, this drink delivers a layered flavor profile—sweet, tangy, and slightly spicy—all in one sip. The combination creates a refreshing balance that keeps your taste buds engaged and makes every sip more enjoyable.",
