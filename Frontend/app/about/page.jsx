@@ -1,52 +1,64 @@
-'use client';
+import About from "./About";
 
-import { useState, useEffect } from 'react';
-import "./about.css";
+const PAGE_URL = "https://zinniezeera.com/about/";
+const OG_IMAGE = "/ZinnieWebsiteImage.jpeg";
+const TITLE = "About Zinnie | Our Story, Vision & Brand Journey";
+const DESCRIPTION =
+  "Discover the story behind Zinnie, our vision, values, and commitment to quality. Learn how we bring style, comfort, and innovation together for modern lifestyles.";
 
-export default function About() {
-    const [isMobile, setIsMobile] = useState(false);
-    const [visible, setVisible] = useState(false);
+export const metadata = {
+  title: {
+    default: TITLE,
+  },
 
-    useEffect(() => {
-        const timer = setTimeout(() => setVisible(true), 50);
+  description: DESCRIPTION,
 
-        const checkScreen = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
+  alternates: {
+    canonical: PAGE_URL,
+  },
 
-        checkScreen();
-        window.addEventListener("resize", checkScreen);
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    siteName: "Zinnie",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "About Zinnie",
+      },
+    ],
+  },
 
-        return () => {
-            window.removeEventListener("resize", checkScreen);
-            clearTimeout(timer);
-        };
-    }, []);
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: "@zinnie",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "About Zinnie",
+      },
+    ],
+  },
 
-    const banners = [
-        { desktop: "/founder.jpg.jpeg", mobile: "/founder-Your-Story.jpeg" },
-    ];
-    return (    
-        <>
-            <div className={`page-transition-enter ${visible ? 'page-transition-enter-active' : ''}`}>
-                {banners.map((banner, index) => (
-                    <section className="banner" key={index}>
-                        {isMobile ? (
-                            <img
-                                src={banner.mobile}
-                                alt="Founder"
-                                className="banner__image"
-                            />
-                        ) : (
-                            <img
-                                src={banner.desktop}
-                                alt="Founder"
-                                className="banner__image"
-                            />
-                        )}
-                    </section>
-                ))}
-            </div>
-        </>
-    );
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
+
+export default function Page() {
+  return <About />;
 }
