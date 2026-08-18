@@ -39,6 +39,10 @@ export const metadata = {
     canonical: "https://zinniezeera.com/",
   },
 
+  other: {
+    "p:domain_verify": "c4dc793c72645f958bbefe71462ca037",
+  },
+
   openGraph: {
     title: "Buy Affordable Soft Drinks & Cold Drinks in India Online",
     siteName: "Zinnie",

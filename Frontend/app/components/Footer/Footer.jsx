@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaInstagram, FaPhone, FaTwitter, FaPinterest, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
@@ -12,7 +13,13 @@ const Footer = () => {
 
                     {/* Brand Column */}
                     <div className="footer-col brand-col">
-                        <img src="/Zinnie-logo.png" alt="Zinnie Logo" className="footer-logo" />
+                        <Image
+                            src="/Zinnie-logo.png"
+                            alt="Zinnie Logo"
+                            className="footer-logo"
+                            width={140}
+                            height={100}
+                        />
                         <p className="brand-tagline">
                             SHREE BALAJI FOODS
                         </p>
@@ -36,24 +43,24 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4 className="footer-heading">About</h4>
                         <ul className="footer-links">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/faqs">Faqs</a></li>
-                            <li><a href="/become-a-distributor/">Distributor</a></li>
-                            <li><a href="/blog/">Blog</a></li>
-                            <li><a href="/contact-us/">Contact Us</a></li>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/about">About Us</Link></li>
+                            <li><Link href="/faqs">Faqs</Link></li>
+                            <li><Link href="/become-a-distributor/">Distributor</Link></li>
+                            <li><Link href="/blog/">Blog</Link></li>
+                            <li><Link href="/contact-us/">Contact Us</Link></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
                         <h4 className="footer-heading">Products</h4>
                         <ul className="footer-links">
-                            <li><a href="/product/">All Products</a></li>
-                            <li><a href="/product/chilli-guava-drink/">Chilli Guava Drink</a></li>
-                            <li><a href="/product/nimbu-zeera-drink/">Nimbu Zeera</a></li>
-                            <li><a href="/product/ginger-lemon-drink/">Ginger Lemon</a></li>
-                            <li><a href="/product/zeera-masala-soda/">Zinnie Zeera</a></li>
-                            <li><a href="/product/mango-drink/">Zinnie Mango</a></li>
+                            <li><Link href="/product/">All Products</Link></li>
+                            <li><Link href="/product/chilli-guava-drink/">Chilli Guava Drink</Link></li>
+                            <li><Link href="/product/nimbu-zeera-drink/">Nimbu Zeera</Link></li>
+                            <li><Link href="/product/ginger-lemon-drink/">Ginger Lemon</Link></li>
+                            <li><Link href="/product/zeera-masala-soda/">Zinnie Zeera</Link></li>
+                            <li><Link href="/product/mango-drink/">Zinnie Mango</Link></li>
                         </ul>
                     </div>
 
@@ -84,7 +91,7 @@ const Footer = () => {
                     </p>
 
                     <p className="Developed">
-                        <a href="/sitemap"> Sitemap </a> | Developed By
+                        <Link href="/sitemap"> Sitemap </Link> | Developed By
                         <a href="https://lensclickerdigital.com" target="_blank" rel="noopener noreferrer"> LensClickerDigital </a>
                     </p>
                 </div>

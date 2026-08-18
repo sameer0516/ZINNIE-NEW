@@ -80,7 +80,7 @@ export default function LatestBlog() {
               className="latest-blog-card"
             >
               <div className="latest-blog-card-image">
-                <img src={imgSrc} alt={blog.altTag || blog.title} />
+               <img src={imgSrc} alt={blog.altTag || blog.title} width={400} height={250} />
               </div>
               <div className="latest-blog-card-body">
                 <div className="latest-blog-card-meta">

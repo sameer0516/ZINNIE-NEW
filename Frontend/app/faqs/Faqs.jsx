@@ -86,7 +86,7 @@ export default function Faqs() {
             <section className="faq-section">
                 <div className="faq-container">
                     <div className="faq-header">
-                        <h2 className="faq-title">Frequently Asked Questions</h2>
+                        <h1 className="faq-title">Frequently Asked Questions</h1>
                         <p className="faq-subtitle">
                             Welcome to our FAQs section, where you can find quick answers to the most common questions about our products, services, ordering, delivery, and policies. If you still need help, feel free to contact our support team anytime.
                         </p>

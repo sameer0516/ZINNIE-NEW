@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import "./aboutUs.css";
 
 const AboutUs = () => {
@@ -12,10 +13,12 @@ const AboutUs = () => {
                     <div className="row au-about-row">
                         <div className="col-6 au-about-col">
                             <div className="au-about-image-wrapper">
-                                <img
+                                <Image
                                     src="/New-About-image.png"
                                     alt="About Us"
                                     className="au-about-image"
+                                    width={800}
+                                    height={600}
                                 />
                             </div>
                         </div>

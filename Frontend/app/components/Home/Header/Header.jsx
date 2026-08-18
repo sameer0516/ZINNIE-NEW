@@ -33,8 +33,8 @@ function renderRichText(text) {
 
 const mainContent = [
     {
-        level: "h1",
-        heading: "Buy Cold Drinks Online in India – Affordable & Best Soft Drinks",
+        level: "h2",
+        heading: "Zinnie – About Our Soft Drinks",
     },
     {
         level: "p",
@@ -700,9 +700,9 @@ function ContentCard({ item, index }) {
             style={{ animationDelay: `${index * 40}ms` }}
         >
             {isHeading && item.heading ? (
-                <h2 className={`card-heading card-heading--${item.level}`}>
+                <Tag className={`card-heading card-heading--${item.level}`}>
                     {item.heading}
-                </h2>
+                </Tag>
             ) : null}
 
             {item.level === "p" && item.body ? (
@@ -774,7 +774,7 @@ export default function Header() {
                         onClick={() => toggle("content")}
                         aria-expanded={openSection === "content"}
                     >
-                        <h2 className="panel-title">Zinnie – About Our Soft Drinks</h2>
+                        <h1 className="panel-title">Buy Cold Drinks Online in India – Affordable & Best Soft Drinks</h1>
                         <span className="panel-chevron">▾</span>
                     </button>
 

@@ -1,34 +1,36 @@
+import Link from "next/link";
+import Image from "next/image";
 import "./BestSelling.css";
 
 const products = [
     {
         id: 1,
         name: "Nimbu Zeera",
-        img: "1.png",
+        img: "/1.png",
         link: "/product/nimbu-zeera-drink/"
     },
     {
         id: 2,
         name: "Chilli Guava",
-        img: "3.png",
+        img: "/3.png",
         link: "/product/chilli-guava-drink/"
     },
     {
         id: 3,
         name: "Zinnie Zeera",
-        img: "4.png",
-        link: "product/zeera-masala-soda/"
+        img: "/4.png",
+        link: "/product/zeera-masala-soda/"
     },
     {
         id: 4,
         name: "Zinnie Mango",
-        img: "5.png",
+        img: "/5.png",
         link: "/product/mango-drink/"
     },
     {
         id: 5,
         name: "Ginger Lemon",
-        img: "2.png",
+        img: "/2.png",
         link: "/product/ginger-lemon-drink/"
     },
 ];
@@ -48,10 +50,12 @@ export default function BestSelling() {
                         <div className="product-card" key={product.id}>
                             {/* Product Image */}
                             <div className="product-img-wrapper">
-                                <img
+                                <Image
                                     src={product.img}
                                     alt={product.name}
                                     className="product-img"
+                                    width={400}
+                                    height={400}
                                 />
                             </div>
 
@@ -61,11 +65,11 @@ export default function BestSelling() {
                                     {product.name}
                                 </p>
 
-                                <a href={product.link}>
+                                <Link href={product.link}>
                                     <button className="btn-view-more">
                                         View More
                                     </button>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -73,11 +77,11 @@ export default function BestSelling() {
 
                 {/* View All CTA */}
                 <div className="bestselling-cta">
-                    <a href="/product">
+                    <Link href="/product">
                         <button className="btn-view-all">
                             View all products
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </>

@@ -71,7 +71,7 @@ export default function Contact() {
           <div className="form-card">
 
             <div className="form-header">
-              <h2 className="form-title">Contact Us – We’re Here to Help</h2>
+              <h1 className="form-title">Contact Us – We’re Here to Help</h1>
               <p className="form-subtitle">
                 Fill in the details below and we'll respond soon.
               </p>

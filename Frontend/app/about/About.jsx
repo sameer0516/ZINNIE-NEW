@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import "./about.css";
 
 export default function About() {
@@ -34,16 +35,18 @@ export default function About() {
                 <section className="founder-section">
                     {/* Left - Image */}
                     <div className="founder-image-wrapper">
-                        <img
+                        <Image
                             src={isMobile ? banner.mobile : banner.desktop}
                             alt="Mr. Rajeyssh Saddhwani - CEO / Founder"
                             className="founder-image"
+                            width={600}
+                            height={700}
                         />
                     </div>
 
                     {/* Right - Content */}
                     <div className="founder-content">
-                        <h3 className="founder-label">CEO / Founder</h3>
+                        <h2 className="founder-label">CEO / Founder</h2>
                         <h1 className="founder-name">Mr. Rajeyssh Saddhwani</h1>
 
                         <p>
