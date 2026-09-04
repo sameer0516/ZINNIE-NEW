@@ -81,7 +81,7 @@ const combinedSchema = {
     {
       "@type": "WebPage",
       "@id": "https://zinniezeera.com/product/#webpage",
-      url: "https://zinniezeera.com/product/",
+      url: "https://zinniezeera.com/product",
       name: "Zinnie Soft Drinks Products",
       isPartOf: {
         "@id": "https://zinniezeera.com/product/#website",
@@ -149,7 +149,7 @@ const combinedSchema = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://zinniezeera.com/",
+          item: "https://zinniezeera.com",
         },
         {
           "@type": "ListItem",
@@ -409,6 +409,8 @@ export default async function ProductPage() {
                         src={getImageUrl(product.image)}
                         alt={product.title || "Product"}
                         className={styles.productImage}
+                        width="450"
+                        height="480"
                       />
                     </div>
                     <div className={styles.productInfo}>

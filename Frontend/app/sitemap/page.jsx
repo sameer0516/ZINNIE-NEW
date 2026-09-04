@@ -1,6 +1,6 @@
 import SitemapList from "./SitemapList";
 
-const PAGE_URL = "https://barosche.com/sitemap/";
+const PAGE_URL = "https://zinniezeera.com/sitemap/";
 const OG_IMAGE = "/logo.png";
 const TITLE = "Sitemap – Zinnie";
 const DESCRIPTION =

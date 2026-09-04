@@ -43,13 +43,14 @@ export default function BlogClient({ initialBlog }) {
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    if (initialBlog) return;
-
-    const realSlug = getSlugFromURL();
+    const realSlug =
+      getSlugFromURL() || (initialBlog && (initialBlog.urlHandle || initialBlog.slug));
 
     if (!realSlug || realSlug === "placeholder") {
-      setLoading(false);
-      setFailed(true);
+      if (!initialBlog) {
+        setLoading(false);
+        setFailed(true);
+      }
       return;
     }
 
@@ -60,7 +61,7 @@ export default function BlogClient({ initialBlog }) {
       })
       .then((data) => {
         if (!data || data.message === "Blog not found") {
-          setFailed(true);
+          if (!initialBlog) setFailed(true);
           setLoading(false);
           return;
         }
@@ -68,13 +69,14 @@ export default function BlogClient({ initialBlog }) {
         setLoading(false);
       })
       .catch(() => {
-        setFailed(true);
+        if (!initialBlog) setFailed(true);
         setLoading(false);
       });
-  }, [initialBlog]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    if (!blog || initialBlog) return;
+    if (!blog) return;
 
     document.title = blog.pageTitle || blog.title;
 
@@ -110,7 +112,7 @@ export default function BlogClient({ initialBlog }) {
       scriptTag.textContent = jsonLd;
       document.head.appendChild(scriptTag);
     }
-  }, [blog, initialBlog]);
+  }, [blog]);
 
   if (loading) {
     return <div style={{ padding: "60px", textAlign: "center" }}>Loading Blog...</div>;
@@ -139,7 +141,7 @@ export default function BlogClient({ initialBlog }) {
       </div>
       {imgSrc && (
         <div className="blog-detail-cover">
-          <img src={imgSrc} alt={blog.altTag || blog.title} />
+          <img src={imgSrc} alt={blog.altTag || blog.title} width="820" height="460" />
         </div>
       )}
       <div className="blog-detail-content">
@@ -149,7 +151,14 @@ export default function BlogClient({ initialBlog }) {
           components={{
             img: ({ node, ...props }) => {
               if (!props.src || props.src.trim() === "") return null;
-              return <img {...props} style={{ maxWidth: "100%", borderRadius: "8px" }} />;
+              return (
+                <img
+                  {...props}
+                  width="800"
+                  height="450"
+                  style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+                />
+              );
             },
           }}
         >

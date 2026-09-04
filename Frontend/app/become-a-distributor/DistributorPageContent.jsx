@@ -417,7 +417,7 @@ const mainContent = [
     },
     {
         level: "p",
-        body: "Zinnie offers a strong foundation for entrepreneurs looking to enter or expand in the beverage industry. With rising demand for masala soda, Indian networks, and regional flavored drinks, this is the right time to grow your business in the<a href='/https://zinniezeera.com/'> cold drinks</a> segment.",
+        body: "Zinnie offers a strong foundation for entrepreneurs looking to enter or expand in the beverage industry. With rising demand for masala soda, Indian networks, and regional flavored drinks, this is the right time to grow your business in the<a href='https://zinniezeera.com/'> cold drinks</a> segment.",
     },
     {
         level: "p",

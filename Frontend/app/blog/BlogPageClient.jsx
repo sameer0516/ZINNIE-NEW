@@ -14,13 +14,17 @@ export default function BlogPageClient({ initialBlogs = [] }) {
   const [loading, setLoading] = useState(initialBlogs.length === 0);
 
   useEffect(() => {
-    if (initialBlogs.length > 0) return;
-
     fetch(`${API_URL}/api/blogs`)
       .then((res) => res.json())
-      .then((data) => { setBlogs(Array.isArray(data) ? data : []); setLoading(false); })
-      .catch((err) => { console.error("Blog fetch error:", err); setLoading(false); });
-  }, [initialBlogs]);
+      .then((data) => {
+        if (Array.isArray(data)) setBlogs(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Blog fetch error:", err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="blog-page-wrapper">
@@ -41,7 +45,9 @@ export default function BlogPageClient({ initialBlogs = [] }) {
 
             return (
               <Link href={`/blog/${identifier}`} key={blog._id} className="blog-card">
-                <div className="blog-card-image"><img src={imgSrc} alt={blog.altTag || blog.title} /></div>
+                <div className="blog-card-image">
+                  <img src={imgSrc} alt={blog.altTag || blog.title} width="450" height="300" />
+                </div>
                 <div className="blog-card-body">
                   <div className="blog-card-meta">
                     <span>{blog.author}</span>

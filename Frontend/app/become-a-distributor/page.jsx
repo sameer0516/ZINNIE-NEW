@@ -1,6 +1,6 @@
 import DistributorClient from './Distributorclient';
 
-const PAGE_URL = "https://zinniezeera.com/become-a-distributor/";
+const PAGE_URL = "https://zinniezeera.com/become-a-distributor";
 const OG_IMAGE = "https://zinniezeera.com/ZinnieWebsiteImage.jpeg";
 const TITLE = "Become a Beverage Distributor in India | Zinnie Soft Drinks";
 const DESCRIPTION =

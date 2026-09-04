@@ -7,13 +7,13 @@ const RETRY_DELAY_MS = 2000;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// Yahan se cache: "no-store" hata diya hai
 async function fetchWithTimeout(url, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     return await fetch(url, {
       signal: controller.signal,
-      next: { revalidate: 3600 },
     });
   } finally {
     clearTimeout(timer);
@@ -48,13 +48,10 @@ export const metadata = {
   title: {
     default: TITLE,
   },
-
   alternates: {
     canonical: PAGE_URL,
   },
-
   description: DESCRIPTION,
-
   keywords: [
     "soft drinks",
     "cold drinks",
@@ -63,11 +60,9 @@ export const metadata = {
     "healthy drinks",
     "Zinnie",
   ],
-
   icons: {
     icon: "/Zinnie-logo.png",
   },
-
   openGraph: {
     title: TITLE,
     siteName: "Zinnie",
@@ -84,7 +79,6 @@ export const metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: TITLE,
@@ -99,7 +93,6 @@ export const metadata = {
       },
     ],
   },
-
   robots: {
     index: true,
     follow: true,

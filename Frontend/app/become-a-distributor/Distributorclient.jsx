@@ -103,7 +103,8 @@ export default function DistributorClient() {
   return (
     <>
       <div className="distributor-page-banner">
-        <img src="/ZinnieWebsiteImage.jpeg" alt="Just Drink Banner" />
+        <img src="/ZinnieWebsiteImage.jpeg" alt="Just Drink Banner" width="1920"
+          height="1080" />
       </div>
 
       <div className="distributor-page">
@@ -113,7 +114,13 @@ export default function DistributorClient() {
           <section key={p.id} className={`product-hero ${p.bg || ''}`}>
             <div className={`product-container ${p.reverse ? 'reverse' : ''}`}>
               <div className="product-image-box">
-                <img src={`/${p.img}`} alt={p.title} className="floating-bottle" />
+                <img
+                  src={`/${p.img}`}
+                  alt={p.title}
+                  width="800"
+                  height="1200"
+                  className="floating-bottle"
+                />
               </div>
               <div className="product-info">
                 <h2 className="product-title">{p.title}</h2>

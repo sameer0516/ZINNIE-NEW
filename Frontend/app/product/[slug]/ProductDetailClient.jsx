@@ -10,14 +10,20 @@ const API_URL = `${API_BASE_URL}/api`;
 export default function ProductDetailClient({ slug, initialProduct }) {
   const router = useRouter();
 
-  // Fix: loading=true jab initialProduct nahi hai
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // Fix: initialProduct turant state me daal do, useEffect ka wait mat karo
+  const [product, setProduct] = useState(initialProduct || null);
+  const [loading, setLoading] = useState(!initialProduct);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedTab, setSelectedTab] = useState("description");
-  const [selectedSize, setSelectedSize] = useState("");
-  const [currentPrice, setCurrentPrice] = useState(0);
+  const [selectedSize, setSelectedSize] = useState(
+    initialProduct?.priceVariations?.length > 0 ? initialProduct.priceVariations[0].size : ""
+  );
+  const [currentPrice, setCurrentPrice] = useState(
+    initialProduct?.priceVariations?.length > 0
+      ? initialProduct.priceVariations[0].price
+      : initialProduct?.price || 0
+  );
   const [cartAdded, setCartAdded] = useState(false);
 
   const getImageUrl = (imagePath) => {
@@ -130,6 +136,8 @@ export default function ProductDetailClient({ slug, initialProduct }) {
               src={getImageUrl(product.image)}
               alt={product.title || "Product"}
               className="product-image"
+              width="700"
+              height="700"
               onError={(e) => {
                 e.target.src = "https://via.placeholder.com/500x500?text=Image+Error";
               }}
